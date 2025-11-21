@@ -18,9 +18,9 @@ The ZIP with the sample files for this sample script can be donwloaded from here
 
 #region 1: Load powerLoad modules 
 # TODO: Adjust Vault version for target Vault
-$VaultVersion = "2025"
-$powerLoadPath = "C:\Program Files\coolOrange\powerload\Vault_" + $VaultVersion
+$powerLoadPath = "C:\Program Files\coolOrange\powerload"   #path to the powerLoad psd1
 Import-Module ($powerLoadPath + "\powerload.psd1") -Verbose
+
 #endregion
 
 #region 2: Initialization
@@ -168,3 +168,4 @@ In PowerShell, there is a difference between single (') and double (") quotes, b
 Get-Help Resolve-InventorReferences
 Get-Help Import-InventorProperties -Examples
 # Don't forget 
+
