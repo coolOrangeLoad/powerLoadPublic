@@ -24,7 +24,7 @@ $SQLUser = "SA"
 $SAPassword = "AutodeskVault@26200"
 ## Connection to Target Vault
 $VaultServer = "localhost"                      #Target server name
-$VaultDB = "Vault_Target"                       #Name of your target Vault DB
+$VaultDB = "Vault-Target"                       #Name of your target Vault DB
 $VaultUser = "Administrator"
 $VaultPW = ""
 
@@ -75,5 +75,6 @@ $result = Export-BCP -ExportDirectory $ExportPath -DisableConfig 1
 ### General hints
 # Showing parameter for cmdlet
 Get-Help Export-BCP
+
 
 
