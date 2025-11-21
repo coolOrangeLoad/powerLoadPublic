@@ -1,6 +1,5 @@
-$VaultVersion = "2025"                                                            #Version of target Vault
-$powerLoadPath = "C:\Program Files\coolOrange\powerload\Vault_" + $VaultVersion   #path to the powerLoad psd1
-Import-Module ($powerLoadPath + "\powerload.psd1") 
+$powerLoadPath = "C:\Program Files\coolOrange\powerload"   #path to the powerLoad psd1
+Import-Module ($powerLoadPath + "\powerload.psd1") -Verbose
 
 # define your database connection
 Connect-PowerLoadDatabase -Server 'localhost\AUTODESKVAULT' -DatabaseName 'pl-test' -User 'sa' -Password 'AutodeskVault@26200' -ForceDatabaseCreation
