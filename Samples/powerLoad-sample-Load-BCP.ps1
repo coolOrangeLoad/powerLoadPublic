@@ -9,8 +9,7 @@
 
 # Load powerLoad modules 
 # TODO: Adjust Vault version for target Vault
-$VaultVersion = "2025"
-$powerLoadPath = "C:\Program Files\coolOrange\powerload\Vault_" + $VaultVersion
+$powerLoadPath = "C:\Program Files\coolOrange\powerload"   #path to the powerLoad psd1
 Import-Module ($powerLoadPath + "\powerload.psd1") -Verbose
 
 ### General settings (must be adjusted to your environment!)
@@ -76,4 +75,5 @@ $result = Export-BCP -ExportDirectory $ExportPath -DisableConfig 1
 ### General hints
 # Showing parameter for cmdlet
 Get-Help Export-BCP
+
 
