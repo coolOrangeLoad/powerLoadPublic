@@ -13,7 +13,7 @@ Imports the BCP packages to the target location.
 ## SYNTAX
 
 ```
-Import-BCP -ImportPath <String> [-SkipFiles] [-SkipItems] [<CommonParameters>]
+Import-BCP -ImportPath <String> [-SkipFiles] [-SkipItems] [-MetaData] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -79,6 +79,21 @@ Aliases:
 
 Required: False
 Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MetaData
+If set to 'True' the cmdlet expects to read an BCP-package that was created with the M-option, where the attribute "FSPath" is used instead of "FilePath" in the Vault.xml to specify the file location.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

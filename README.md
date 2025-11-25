@@ -14,19 +14,23 @@ powerLoad helps you do just that. Your data is imported into a temporary powerLo
 
 ## Supported Vault versions
 
-Vault Professional 2025, 2024, 2023
+Vault Professional 2026, 2025, 2024
+
+Remark: Autodesk supports the use for the Autodesk Transfer Utility (DTU) only if the Vault version of the source Vault and target Vault are the same.
+Therefore we also recommend to have the source Vault and target Vault with the same version. 
 
 ## Known limitations and issues
 
-Status at 10.07.2025
+Status at 21.11.2025
 
+- For ACAD Reference analysis it is required that the ISE is run as Administrator
 - Import-BCP ignores secodary associated files
 - Import-BCP does not import Folder-Item Links
 - Import-BCP does not yet support delta
 - Export-BCP does not yet support delta
 - Export-BCP does not yet support Item Ids bigger than 2 147 483 647 (Int32)
-- Item BOMs are not supported!
-- File BOM blobsare not supported. However, in case of a Vault to Vault migration, the IDs remain the same, so the existing BOM blobs can be reused, if meta-data are not changed.
+- Item BOMs are not supported! In case you need to transfer BOMs contact our consultants.
+- File BOM blobs are not supported. However, in case of a Vault to Vault migration, the IDs remain the same, so the existing BOM blobs can be reused, if meta-data are not changed.
 - Export-BCP and Import-BCP may run into SQL command timeout when used for very huge data.
 If that happens, the user can increase the setting 'CommandTimeout' in the config file 'DatabaseManager.dll.config' in the install location. By default it is set to 900 seconds
 
@@ -70,8 +74,7 @@ The powerLoad extension provides the following CmdLets: <br>
 
 Create a PowerShell Script, copy this code, and adapt and extend as needed.
 ```PowerShell
-$VaultVersion = "2025"                                                            #Version of target Vault
-$powerLoadPath = "C:\Program Files\coolOrange\powerload\Vault_" + $VaultVersion   #path to the powerLoad DLL
+$powerLoadPath = "C:\Program Files\coolOrange\powerload"   #path to the powerLoad DLL
 Import-Module ($powerLoadPath + "\powerload.psd1") 
 Connect-powerLoadDatabase -Server "MYSERVER\MYSQLINSTANCE" -DatabaseName "pl-test" -User "sa" -Password 'MySAPassword' #connect to database 
 
