@@ -23,7 +23,7 @@ jobs:
     - name: Checkout source repo
       uses: actions/checkout@v4
       with:
-        repository: coolOrangeLabs/powerLoad
+        repository: ${{ env.SOURCE_REPO }}
         token: ${{ secrets.SOURCE_REPO_TOKEN }}
         path: source-repo
 
