@@ -77,6 +77,10 @@ Syntax: 'Old path where reference was found, when file was saved last time' = 'N
 $alternativePaths = @{'c:\legacy filestore\designs\engine mkii\components'='C:\Data\OutOfProject'}  
 $Starttime=Get-Date
 $refCheck = Resolve-InventorReferences -InventorProjectFile $IPJFile -ErrorCSVPath ($LogPath + "InvAnalysis_errors.csv") -AlternativePaths $alternativePaths
+####   To log treated files, in case of issues during the reference analyis, use the -Verbose 4 option:
+#$refCheck = Resolve-InventorReferences -InventorProjectFile $IPJFile -ErrorCSVPath ($LogPath + "InvAnalysis_errors.csv") -AlternativePaths $alternativePaths -Verbose 4>($LogPath + "InvAnalysisError.log")
+#### More details about redirection can be found here: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.5
+
 $EndTime = Get-Date
 $duration = $EndTime - $Starttime
 Write-Host "Inventor analysis time [h]: $($duration.TotalMinutes)"    #Time for 2nd Inventor analysis with alternativePaths; As only files are analyzed that had errors in the 1st run, it is often much faster.
@@ -168,4 +172,5 @@ In PowerShell, there is a difference between single (') and double (") quotes, b
 Get-Help Resolve-InventorReferences
 Get-Help Import-InventorProperties -Examples
 # Don't forget 
+
 
