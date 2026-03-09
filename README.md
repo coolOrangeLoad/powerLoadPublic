@@ -23,12 +23,10 @@ Therefore we also recommend to have the source Vault and target Vault with the s
 
 Status at 21.11.2025
 
-- For ACAD Reference analysis it is required that the ISE is run as Administrator
 - Import-BCP ignores secodary associated files
 - Import-BCP does not import Folder-Item Links
 - Import-BCP does not yet support delta
 - Export-BCP does not yet support delta
-- Export-BCP does not yet support Item Ids bigger than 2 147 483 647 (Int32)
 - Item BOMs are not supported! In case you need to transfer BOMs contact our consultants.
 - File BOM blobs are not supported. However, in case of a Vault to Vault migration, the IDs remain the same, so the existing BOM blobs can be reused, if meta-data are not changed.
 - Export-BCP and Import-BCP may run into SQL command timeout when used for very huge data.
@@ -37,11 +35,11 @@ If that happens, the user can increase the setting 'CommandTimeout' in the confi
 
 ## Prerequisites
 
-Operating System: Windows 10 and 11
+- Operating System: Windows 11
+- Installed Programs: Autodesk Vault, coolOrange powerLoad/bcpToolkit V25 ([download](https://www.coolorange.com/powerload-download-page)), Microsoft PowerShell, AutoCAD Mechanical if AutoCAD DWGs and/or Inventor **Apprentice** if Inventor files to be analyzed for missing references.
 
-Installed Programs: Autodesk Vault, coolOrange powerLoad/bcpToolkit V25 ([download](https://www.coolorange.com/powerload-download-page)), Microsoft PowerShell, AutoCAD Mechanical if AutoCAD DWGs and/or Inventor if Inventor files to be analyzed for missing references
-
-Database: MS SQL Server 2017 or newer 
+**Hint**: As Inventor **Apprentice** is no longer included in Inventor 2026, it must be installed separately!
+- Database: MS SQL Server 2017 or newer 
 
 
 ## Installation
