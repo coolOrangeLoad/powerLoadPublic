@@ -21,7 +21,7 @@ Therefore we also recommend to have the source Vault and target Vault with the s
 
 ## Known limitations and issues
 
-Status at 21.11.2025
+Status at 09.03.2026
 
 - Import-BCP ignores secodary associated files
 - Import-BCP does not import Folder-Item Links
